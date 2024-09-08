@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title></title>
+  </head>
+  <body>
+    <form id="resume-form">
+      <section id="personal-info">
+        <h2>Personal Information</h2>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" /><br /><br />
+        <label for="profile-picture">Profile Picture:</label>
+        <input
+          type="file"
+          id="profile-picture"
+          name="profile-picture"
+        /><br /><br />
+        <label for="github">GitHub:</label>
+        <input type="url" id="github" name="github" /><br /><br />
+        <label for="vercel">Vercel:</label>
+        <input type="url" id="vercel" name="vercel" /><br /><br />
+        <label for="npm">npm:</label>
+        <input type="url" id="npm" name="npm" /><br /><br />
+      </section>
+      <section id="contact">
+        <h2>Contact</h2>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" /><br /><br />
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" /><br /><br />
+        <label for="linkedin">LinkedIn:</label>
+        <input type="url" id="linkedin" name="linkedin" /><br /><br />
+      </section>
+      <section id="personal-details">
+        <h2>Personal Details</h2>
+        <label for="live-in">Live in:</label>
+        <input type="text" id="live-in" name="live-in" /><br /><br />
+        <label for="from">From:</label>
+        <input type="text" id="from" name="from" /><br /><br />
+        <label for="date-of-birth">Date of Birth:</label>
+        <input
+          type="date"
+          id="date-of-birth"
+          name="date-of-birth"
+        /><br /><br />
+        <label for="gender">Gender:</label>
+        <input type="text" id="gender" name="gender" /><br /><br />
+        <label for="nationality">Nationality:</label>
+        <input type="text" id="nationality" name="nationality" /><br /><br />
+        <label for="hobbies">Hobbies:</label>
+        <input type="text" id="hobbies" name="hobbies" /><br /><br />
+        <label for="languages">Languages:</label>
+        <input type="text" id="languages" name="languages" /><br /><br />
+      </section>
+      <section id="objective">
+        <h2>Objective</h2>
+        <textarea id="objective" name="objective"></textarea>
+      </section>
+      <section id="education">
+        <h2>Education</h2>
+        <label for="education-1">Education 1:</label>
+        <input type="text" id="education-1" name="education-1" /><br /><br />
+        <label for="education-2">Education 2:</label>
+        <input type="text" id="education-2" name="education-2" /><br /><br />
+      </section>
+      <section id="skills">
+        <h2>Skills</h2>
+        <label for="skill-1">Skill 1:</label>
+        <input type="text" id="skill-1" name="skill-1" /><br /><br />
+        <label for="skill-2">Skill 2:</label>
+        <input type="text" id="skill-2" name="skill-2" /><br /><br />
+      </section>
+      <button id="generate-resume">Generate Resume</button>
+    </form>
+
+    <div id="generated-resume"></div>
+
+    <script src="./src/index.ts"></script>
+  </body>
+</html>
