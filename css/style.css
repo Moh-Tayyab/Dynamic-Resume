@@ -10,7 +10,7 @@
     font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333;
-    background:linear-gradient(135red, #7931ec, #52d646);
+    background:linear-gradient(135red, #7931ec, #02c2b2);
     background-image: linear-gradient(to right, #ce8f70, #ff99cc);
   }
   
@@ -98,5 +98,31 @@
   
   #generated-resume a:hover {
     color: #23527c;
+  }
+  
+  #resume-actions {
+    margin-top: 20px;
+  }
+  
+  #resume-actions button {
+    margin: 5px;
+    padding: 10px 15px;
+    font-size: 16px;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #00ff40;
+    cursor: pointer;
+  }
+  
+  #resume-actions button:hover {
+    background-color: #00b345;
+  }
+  
+  #resume-actions button:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
   }
   

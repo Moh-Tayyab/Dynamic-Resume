@@ -8,6 +8,8 @@
     <title></title>
   </head>
   <body>
+
+    <!-- Form Section -->
     <form id="resume-form">
       <section id="personal-info">
         <h2>Personal Information</h2>
@@ -18,7 +20,14 @@
           type="file"
           id="profile-picture"
           name="profile-picture"
+          accept="image/*"
         /><br /><br />
+        <img
+          id="preview"
+          src=""
+          alt="Image preview"
+          style="display: none; max-width: 200px"
+        />
         <label for="github">GitHub:</label>
         <input type="url" id="github" name="github" /><br /><br />
         <label for="vercel">Vercel:</label>
@@ -79,6 +88,7 @@
 
     <div id="generated-resume"></div>
 
-    <script src="./src/index.ts"></script>
+
+    <script src="./dist/index.js"></script>
   </body>
 </html>
