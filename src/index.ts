@@ -1,12 +1,18 @@
-
-
-document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('resume-form') as HTMLFormElement;
-  const generateResumeButton = document.getElementById('generate-resume') as HTMLButtonElement;
-  const generatedResumeDiv = document.getElementById('generated-resume') as HTMLDivElement;
-  const resumeActionsDiv = document.getElementById('resume-actions') as HTMLDivElement;
-  const fileInput = document.getElementById('profile-picture') as HTMLInputElement;
-  const previewImage = document.getElementById('preview') as HTMLImageElement;
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("resume-form") as HTMLFormElement;
+  const generateResumeButton = document.getElementById(
+    "generate-resume"
+  ) as HTMLButtonElement;
+  const generatedResumeDiv = document.getElementById(
+    "generated-resume"
+  ) as HTMLDivElement;
+  const resumeActionsDiv = document.getElementById(
+    "resume-actions"
+  ) as HTMLDivElement;
+  const fileInput = document.getElementById(
+    "profile-picture"
+  ) as HTMLInputElement;
+  const previewImage = document.getElementById("preview") as HTMLImageElement;
 
   function handleFileSelect(event: Event): void {
     const target = event.target as HTMLInputElement;
@@ -16,23 +22,23 @@ document.addEventListener('DOMContentLoaded', () => {
       const file = files[0];
       const reader = new FileReader();
 
-      reader.onload = function(e: ProgressEvent<FileReader>) {
+      reader.onload = function (e: ProgressEvent<FileReader>) {
         if (e.target && e.target.result) {
           previewImage.src = e.target.result as string;
-          previewImage.style.display = 'block';
+          previewImage.style.display = "block";
         }
       };
 
       reader.readAsDataURL(file);
     } else {
-      previewImage.src = '';
-      previewImage.style.display = 'none';
+      previewImage.src = "";
+      previewImage.style.display = "none";
     }
   }
 
-  fileInput.addEventListener('change', handleFileSelect);
+  fileInput.addEventListener("change", handleFileSelect);
 
-  generateResumeButton.addEventListener('click', (e) => {
+  generateResumeButton.addEventListener("click", (e) => {
     e.preventDefault();
     const formData = new FormData(form);
     const resumeData: { [key: string]: string } = {};
@@ -41,7 +47,9 @@ document.addEventListener('DOMContentLoaded', () => {
       resumeData[key] = value.toString();
     });
 
-    const profilePicture = previewImage.src ? previewImage.src : resumeData['profile-picture'];
+    const profilePicture = previewImage.src
+      ? previewImage.src
+      : resumeData["profile-picture"];
 
     const generatedResume = `
       <h1>${resumeData.name}</h1>
@@ -59,9 +67,9 @@ document.addEventListener('DOMContentLoaded', () => {
       </ul>
       <h2>Personal Details</h2>
       <ul>
-        <li>Live in: ${resumeData['live-in']}</li>
+        <li>Live in: ${resumeData["live-in"]}</li>
         <li>From: ${resumeData.from}</li>
-        <li>Date of Birth: ${resumeData['date-of-birth']}</li>
+        <li>Date of Birth: ${resumeData["date-of-birth"]}</li>
         <li>Gender: ${resumeData.gender}</li>
         <li>Nationality: ${resumeData.nationality}</li>
         <li>Hobbies: ${resumeData.hobbies}</li>
@@ -71,19 +79,17 @@ document.addEventListener('DOMContentLoaded', () => {
       <p>${resumeData.objective}</p>
       <h2>Education</h2>
       <ul>
-        <li>${resumeData['education-1']}</li>
-        <li>${resumeData['education-2']}</li>
+        <li>${resumeData["education-1"]}</li>
+        <li>${resumeData["education-2"]}</li>
       </ul>
       <h2>Skills</h2>
       <ul>
-        <li>${resumeData['skill-1']}</li>
-        <li>${resumeData['skill-2']}</li>
+        <li>${resumeData["skill-1"]}</li>
+        <li>${resumeData["skill-2"]}</li>
       </ul>
     `;
 
     generatedResumeDiv.innerHTML = generatedResume;
-    resumeActionsDiv.style.display = 'block';
+    resumeActionsDiv.style.display = "block";
   });
-})
-
- 
+});

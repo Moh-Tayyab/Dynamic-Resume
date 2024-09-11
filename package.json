@@ -5,15 +5,13 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "(npx parcel ./index.html) & npx parcel watch ./index.html"
+    "test": "echo \"Error: no test specified\" && exit 1"
+    
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "parcel": "^2.12.0"
-  },
+  
   "dependencies": {
     "jspdf": "^2.5.1"
   }
